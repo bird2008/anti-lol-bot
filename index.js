@@ -1,4 +1,4 @@
-const dotenv = require("dotenv").config()
+const dotenv = require("dotenv").config();
 
 const { Client, GatewayIntentBits } = require("discord.js");
 const client = new Client({
@@ -34,7 +34,7 @@ client.on("ready", () => {
 				);
 				if (
 					newMember.member.presence.activities[i].name.toLowerCase() ==
-					"league of legends"
+					"spotify"
 				) {
 					console.log(`${newMember.user.tag} dostał bana za granie w lola.`);
 					try {
@@ -45,9 +45,6 @@ client.on("ready", () => {
 							.catch((err) => {
 								console.error(err);
 							});
-						guild.members.send(
-							"Nie graj w ligę, ban do odwołania XD - administracja serwera klasowego 🙂"
-						);
 						break;
 					} catch (err) {}
 				}
@@ -60,14 +57,8 @@ client.on("ready", () => {
 
 client.on("messageCreate", (message) => {
 	if (message.content === "JD") {
-		message.author.send("JE*AĆ DISA");
+		message.author.send("JEBAĆ DISA");
 	}
 });
 
-// client.on("guildBanAdd", (message) => {
-
-// });
-
-client.login(
-	process.env.token
-);
+client.login(process.env.token);
