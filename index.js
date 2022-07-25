@@ -34,7 +34,7 @@ client.on("ready", () => {
 				);
 				if (
 					newMember.member.presence.activities[i].name.toLowerCase() ==
-					"spotify"
+					"league of legends"
 				) {
 					console.log(`${newMember.user.tag} dostał bana za granie w lola.`);
 					try {
