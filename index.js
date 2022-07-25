@@ -12,10 +12,7 @@ const client = new Client({
 	],
 });
 
-client.on("ready", () => {
-	console.log(`Logged in as ${client.user.tag}!`);
-
-	client.on("presenceUpdate", (newMember) => {
+client.on("presenceUpdate", (oldMember, newMember) => {
 		const guild = newMember.guild;
 		member = newMember;
 		if (newMember.user.bot) return;
@@ -53,11 +50,14 @@ client.on("ready", () => {
 			console.log("Brak aktywności");
 		}
 	});
-});
 
+client.on("ready", () => {
+	console.log(`Logged in as ${client.user.tag}!`);
+});
+	
 client.on("messageCreate", (message) => {
 	if (message.content === "JD") {
-		message.author.send("JEBAĆ DISA");
+		message.author.send("JD");
 	}
 });
 
