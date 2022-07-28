@@ -1,2 +1,2 @@
-# anti_lol_bot
+# anti-lol-bot
 Discord bot, that ban lol gamers on server.
